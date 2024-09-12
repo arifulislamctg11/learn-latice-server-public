@@ -36,7 +36,7 @@ async function run() {
 
     const userCollection = client.db("LearnLatticeDB").collection("users");
     const sessionCollection = client.db("LearnLatticeDB").collection("sessions");
-    const tutorsCollection = await userCollection.find({ role: "tutor" }).toArray();
+    const tutorsCollection = userCollection.find({ role: "tutor" }).toArray();
     const bookedSessionCollection = client.db("LearnLatticeDB").collection("BookedSessions");
     const materialCollection = client.db("LearnLatticeDB").collection("materials");
     const reviewCollection = client.db("LearnLatticeDB").collection("reviews");
